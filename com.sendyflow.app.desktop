@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=SendyFlow
+Comment=Modern API Testing & Development Platform
+Exec=sendyflow %U
+Icon=com.sendyflow.app
+Terminal=false
+Type=Application
+StartupWMClass=SendyFlow
+Categories=Development;WebDevelopment;Debugger;
+MimeType=x-scheme-handler/sendyflow;
+Keywords=api;rest;graphql;websocket;http;testing;client;postman;insomnia;

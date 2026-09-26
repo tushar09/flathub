@@ -1,0 +1,65 @@
+app-id: com.sendyflow.app
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '24.08'
+command: sendyflow
+separate-locales: false
+
+finish-args:
+  # X11 & Wayland sockets
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  # Network access for API requests, websockets & OAuth
+  - --share=network
+  # GPU Hardware Acceleration
+  - --device=dri
+  # Audio
+  - --socket=pulseaudio
+  # Keyring / Secrets integration
+  - --talk-name=org.freedesktop.secrets
+  # Desktop notifications
+  - --talk-name=org.freedesktop.Notifications
+  # Open system browser for Google / external OAuth login
+  - --talk-name=org.freedesktop.portal.OpenURI
+  # Access user documents & downloads for importing/exporting API collections
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+
+modules:
+  - name: sendyflow
+    buildsystem: simple
+    build-commands:
+      # Extract debian package
+      - ar -x sendyflow.deb
+      - tar -xf data.tar.xz
+      # Install main application directory
+      - install -dm755 /app/lib/sendyflow
+      - cp -r opt/SendyFlow/* /app/lib/sendyflow/
+      # Install launch wrapper
+      - install -Dm755 sendyflow.sh /app/bin/sendyflow
+      # Install desktop file
+      - install -Dm644 com.sendyflow.app.desktop /app/share/applications/com.sendyflow.app.desktop
+      # Install AppStream metadata
+      - install -Dm644 com.sendyflow.app.metainfo.xml /app/share/metainfo/com.sendyflow.app.metainfo.xml
+      # Install icons
+      - install -Dm644 usr/share/icons/hicolor/512x512/apps/sendyflow.png /app/share/icons/hicolor/512x512/apps/com.sendyflow.app.png
+      - install -Dm644 usr/share/icons/hicolor/256x256/apps/sendyflow.png /app/share/icons/hicolor/256x256/apps/com.sendyflow.app.png
+      - install -Dm644 usr/share/icons/hicolor/128x128/apps/sendyflow.png /app/share/icons/hicolor/128x128/apps/com.sendyflow.app.png
+      - install -Dm644 usr/share/icons/hicolor/64x64/apps/sendyflow.png /app/share/icons/hicolor/64x64/apps/com.sendyflow.app.png
+    sources:
+      - type: file
+        url: https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.5/Sendy.Flow-2.1.5-amd64.deb
+        sha256: b71cfc4b7817c7ec98c2268686390fb46aa1aae38a2f4fe58ecb1ba0c3e2e099
+        dest-filename: sendyflow.deb
+        only-arches: [x86_64]
+      - type: file
+        path: com.sendyflow.app.desktop
+      - type: file
+        path: com.sendyflow.app.metainfo.xml
+      - type: script
+        dest-filename: sendyflow.sh
+        commands:
+          - exec zypak-wrapper /app/lib/sendyflow/sendyflow "$@"

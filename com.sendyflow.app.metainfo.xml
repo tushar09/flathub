@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.sendyflow.app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>SendyFlow</name>
+  <summary>Modern API Testing &amp; Development Platform</summary>
+  <description>
+    <p>
+      SendyFlow is a high-performance desktop API development and testing platform designed for developers and engineering teams.
+    </p>
+    <p>Key features include:</p>
+    <ul>
+      <li>Support for REST, GraphQL, and real-time WebSocket requests.</li>
+      <li>Instant team collaboration with real-time collection and environment sync.</li>
+      <li>Local loopback authentication and seamless deep-link integrations.</li>
+      <li>Native desktop performance with a modern, distraction-free interface.</li>
+      <li>Pre-request and post-request test scripting.</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">com.sendyflow.app.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>SendyFlow main dashboard and API request builder</caption>
+      <image>https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.5/screenshot-main-board.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Team workspace and collection management</caption>
+      <image>https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.5/screenshot-team-management.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://sendyflow.com</url>
+  <url type="bugtracker">https://github.com/tushar09/SendyFlow-Release/issues</url>
+  <url type="help">https://sendyflow.com</url>
+  <developer id="com.sendyflow">
+    <name>SendyFlow Team</name>
+  </developer>
+  <categories>
+    <category>Development</category>
+    <category>Debugger</category>
+    <category>Network</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.1.5" date="2026-09-26">
+      <description>
+        <p>Release v2.1.5 with Linux support, in-app authentication, and enhanced team workspace synchronization.</p>
+      </description>
+    </release>
+  </releases>
+</component>
