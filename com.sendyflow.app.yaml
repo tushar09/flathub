@@ -10,7 +10,7 @@ separate-locales: false
 finish-args:
   # X11 & Wayland sockets
   - --share=ipc
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=wayland
   # Network access for API requests, websockets & OAuth
   - --share=network
@@ -22,8 +22,6 @@ finish-args:
   - --talk-name=org.freedesktop.secrets
   # Desktop notifications
   - --talk-name=org.freedesktop.Notifications
-  # Open system browser for Google / external OAuth login
-  - --talk-name=org.freedesktop.portal.OpenURI
   # Access user documents & downloads for importing/exporting API collections
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
