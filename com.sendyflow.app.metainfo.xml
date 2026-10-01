@@ -22,11 +22,11 @@
   <screenshots>
     <screenshot type="default">
       <caption>SendyFlow main dashboard and API request builder</caption>
-      <image>https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.5/screenshot-main-board.png</image>
+      <image>https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.6/screenshot-main-board.png</image>
     </screenshot>
     <screenshot>
       <caption>Team workspace and collection management</caption>
-      <image>https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.5/screenshot-team-management.png</image>
+      <image>https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.6/screenshot-team-management.png</image>
     </screenshot>
   </screenshots>
   <url type="homepage">https://sendyflow.com</url>
@@ -42,6 +42,11 @@
   </categories>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2.1.6" date="2026-10-02">
+      <description>
+        <p>Release v2.1.6 with refined team workspace navigation, improved environment settings handling, and enhanced desktop stability.</p>
+      </description>
+    </release>
     <release version="2.1.5" date="2026-09-26">
       <description>
         <p>Release v2.1.5 with Linux support, in-app authentication, and enhanced team workspace synchronization.</p>

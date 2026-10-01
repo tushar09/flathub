@@ -51,8 +51,8 @@ modules:
       - install -Dm644 usr/share/icons/hicolor/64x64/apps/sendyflow.png /app/share/icons/hicolor/64x64/apps/com.sendyflow.app.png
     sources:
       - type: file
-        url: https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.5/Sendy.Flow-2.1.5-amd64.deb
-        sha256: b71cfc4b7817c7ec98c2268686390fb46aa1aae38a2f4fe58ecb1ba0c3e2e099
+        url: https://github.com/tushar09/SendyFlow-Release/releases/download/v2.1.6/Sendy.Flow-2.1.6-amd64.deb
+        sha256: e3c4091535189d39b5115f2ca960b832a34462e86c33bfa20d08154fa5da4196
         dest-filename: sendyflow.deb
         only-arches: [x86_64]
       - type: file
